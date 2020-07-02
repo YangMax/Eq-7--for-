@@ -1,0 +1,13 @@
+\begin{equation}
+\label{opt}
+\begin{split}
+    \mathop{min}\limits_{\bm{\bf{B}}} L_{s} &= -\log p({\bf{S}} \mid {\bf{B}}) \\
+   &= - \sum_{s_{ij} \in {\bf{S}}} \log \emph{p}(s_{ij} \mid {\bf{B}}) \\
+   &= - \sum_{s_{ij} \in {\bf{S}}} \log (s_{ij}\sigma (\theta _{ij}) + (1-s_{ij})(1 - \sigma (\theta _{ij}))\\
+   &= - \sum_{s_{ij} \in {\bf{S}}} \log (\frac{s_{ij}}{1 + e^{-\theta _{ij}}} + (1-s_{ij})(1 - \frac{1}{1 + e^{-\theta _{ij}}}))\\
+   &= - \sum_{s_{ij} \in {\bf{S}}} \log (\frac{s_{ij} + (1-s_{ij})e^{-\theta _{ij}}}{ 1 + e^{-\theta _{ij}}})\\
+   &= - \sum_{s_{ij} \in {\bf{S}}} \log (\frac{ 1- s_{ij} + s_{ij} e^{\theta _{ij}}}{ 1 + e^{\theta _{ij}}} )\\
+   &= - \sum_{s_{ij} \in {\bf{S}}} (\log (1- s_{ij} + s_{ij} e^{\theta _{ij}}) - \log (1 + e^{\theta _{ij}}))\\
+   &= - \sum_{s_{ij} \in {\bf{S}}}(s_{ij} \theta_{ij} - \log (1+ e^{\theta _{ij}})) .
+\end{split}
+\end{equation}
